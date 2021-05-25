@@ -1,14 +1,9 @@
 package com.bookstore;
 
-public class Book {
-    public void setPrice(double price) {
-
-    }
-
-    public void setTitle(String title) {
-    }
-
-    public void setYear(int year) {
-
+public class Book extends Item{
+    @Override
+    public Double getPrice() {
+        return super.getPrice();
     }
 }
+
