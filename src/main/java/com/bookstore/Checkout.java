@@ -26,7 +26,7 @@ public class Checkout {
         Double total=0.0;
         for (Item item: items) {
             if(item.getYear() > 2000){
-                Item item_= new BookOnOffer(item);
+                Item item_= new ItemOnOffer(item);
                 total = total + item_.getPrice();
             } else {
                 total = total + item.getPrice();

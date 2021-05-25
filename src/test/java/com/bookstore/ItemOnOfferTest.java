@@ -11,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @ExtendWith(MockitoExtension.class)
-public class BookOnOfferTest {
+public class ItemOnOfferTest {
 
     @Mock
     Item item;
 
     @InjectMocks
-    BookOnOffer bookOnOffer=new BookOnOffer(item);
+    ItemOnOffer bookOnOffer=new ItemOnOffer(item);
 
     @Test
     void test10PercentDiscountIfBookIsPublishedAfter2000() {

@@ -46,7 +46,6 @@ public class CheckoutTest {
         assertEquals(35.27,cost);
     }
 
-
     @Test
     void checkoutThreeBooksWithOnePublishedAfter2000WithTotalExceedDiscount() {
         //setup
