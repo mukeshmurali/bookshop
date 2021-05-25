@@ -5,6 +5,8 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class Checkout {
+    public static final int CHECKOUT_TOTAL_ELIGIBLE_FOR_DISCOUNT = 30;
+    public static final int TOTALAMOUNT_DISCOUNT_PERCENTAGE = 5;
     private static Checkout checkout;
     List<Item> items;
 
@@ -30,8 +32,8 @@ public class Checkout {
                 total = total + item.getPrice();
             }
         }
-        if(total > 30)
-            total= total - (total *5/100);
+        if(total > CHECKOUT_TOTAL_ELIGIBLE_FOR_DISCOUNT)
+            total= total - (total * TOTALAMOUNT_DISCOUNT_PERCENTAGE /100);
         return getFormattedTotal(total);
     }
 
