@@ -20,7 +20,8 @@ public class CheckoutTest {
         Item book2 = getItem(13.14, "The Terrible Privacy of Maxwell Sim", 2010);
         bookList.add(book1);
         bookList.add(book2);
-        checkout = new Checkout(bookList);
+        checkout = Checkout.getInstance();
+        checkout.addItems(bookList);
         //act
         Double cost=checkout.calculatePaymentAmountAfterDiscount();
         //assert
@@ -37,7 +38,8 @@ public class CheckoutTest {
         bookList.add(book1);
         bookList.add(book2);
         bookList.add(book3);
-        checkout = new Checkout(bookList);
+        checkout = Checkout.getInstance();
+        checkout.addItems(bookList);
         //act
         Double cost=checkout.calculatePaymentAmountAfterDiscount();
         //assert
@@ -55,7 +57,8 @@ public class CheckoutTest {
         bookList.add(book1);
         bookList.add(book2);
         bookList.add(book3);
-        checkout = new Checkout(bookList);
+        checkout = Checkout.getInstance();
+        checkout.addItems(bookList);
         //act
         Double cost=checkout.calculatePaymentAmountAfterDiscount();
         //assert

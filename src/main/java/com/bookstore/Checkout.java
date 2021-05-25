@@ -5,10 +5,19 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class Checkout {
+    private static Checkout checkout;
     List<Item> items;
 
-    public Checkout(List<Item> items) {
-        this.items = items;
+    public static Checkout getInstance(){
+        if(checkout == null){
+            checkout = new Checkout();
+        }
+        return checkout;
+    }
+    private Checkout() {}
+
+    public void addItems(List<Item> items){
+        this.items=items;
     }
 
     public Double calculatePaymentAmountAfterDiscount() {
