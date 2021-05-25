@@ -1,6 +1,5 @@
 package com.bookstore;
 
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 
@@ -15,12 +14,12 @@ public class CheckoutTest {
     @Test
     void checkoutTwoBooksWithOneBookPublishedAfter2000() {
         //setup
-        List<Book> bookList = new ArrayList<Book>();
-        Book book1 = new Book();
+        List<Item> bookList = new ArrayList<>();
+        Item book1 = new Book();
         book1.setPrice(12.87);
         book1.setTitle("Three Men in a Boat");
         book1.setYear(1889);
-        Book book2 = new Book();
+        Item book2 = new Book();
         book2.setPrice(13.14);
         book2.setTitle("The Terrible Privacy of Maxwell Sim");
         book2.setYear(2010);

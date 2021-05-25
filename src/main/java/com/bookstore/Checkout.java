@@ -5,7 +5,7 @@ import java.util.List;
 public class Checkout {
     List<Book> books;
 
-    public Checkout(List<Book> bookList) {
+    public Checkout(List<Item> bookList) {
         
     }
 
