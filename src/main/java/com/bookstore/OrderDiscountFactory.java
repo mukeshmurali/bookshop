@@ -24,7 +24,7 @@ public class OrderDiscountFactory {
     public Double getDiscountedItemPrice(Item item) {
         Double total = item.getPrice();
         if (item.getYear() > DISCOUNT_PUBLISHEDYEAR) {
-            total = new PublishedAfter2000Offer().getDiscountedValue(item.getPrice());
+            total = new DiscountPublishedAfter2000().getDiscountedValue(item.getPrice());
         }
         return total;
     }
