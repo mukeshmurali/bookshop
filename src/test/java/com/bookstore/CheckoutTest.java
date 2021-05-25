@@ -44,6 +44,24 @@ public class CheckoutTest {
         assertEquals(35.27,cost);
     }
 
+
+    @Test
+    void checkoutThreeBooksWithOnePublishedAfter2000WithTotalExceedDiscount() {
+        //setup
+        List<Item> bookList = new ArrayList<Item>();
+        Item book1 = getItem(13.14,"Terrible Privacy of Maxwell Sim",2010);
+        Item book2 = getItem(12.87, "Three Men in a Boat", 1889);
+        Item book3 = getItem(13.21,"Great Expectations",1861);
+        bookList.add(book1);
+        bookList.add(book2);
+        bookList.add(book3);
+        checkout = new Checkout(bookList);
+        //act
+        Double cost=checkout.calculatePaymentAmountAfterDiscount();
+        //assert
+        assertEquals(36.01,cost);
+    }
+
     @NotNull
     private Item getItem(double price, String title, int year) {
         Item book = new Book();
