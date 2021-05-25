@@ -6,7 +6,7 @@ public class PublishedAfter2000Offer implements CheckoutDiscount {
 
     @Override
     public Double getDiscountedValue(Double price) {
-        price= price - (price * DISCOUNT_POST_2000 /100);
+        price = price - (price * DISCOUNT_POST_2000 / 100);
         return price;
     }
 }
