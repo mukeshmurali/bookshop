@@ -1,5 +1,5 @@
 package com.bookstore;
 
 public interface CheckoutDiscount {
-    Double getTotal(Double price);
+    Double getDiscountedValue(Double price);
 }

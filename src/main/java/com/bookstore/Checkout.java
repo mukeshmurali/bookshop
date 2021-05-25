@@ -24,12 +24,7 @@ public class Checkout {
     public Double calculatePaymentAmountAfterDiscount() {
         Double total=0.0;
         for (Item item: items) {
-            if(item.getYear() > 2000){
-                Item item_= new PublishedAfter2000Offer(item);
-                total = total + item_.getPrice();
-            } else {
-                total = total + item.getPrice();
-            }
+                total = total + OrderDiscountFactory.getInstance().getDiscountedItemPrice(item);
         }
         Double totalAfterCheckoutDiscount = getCheckoutDiscount(total);
         return getFormattedTotal(totalAfterCheckoutDiscount);
