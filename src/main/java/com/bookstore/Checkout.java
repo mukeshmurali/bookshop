@@ -36,7 +36,7 @@ public class Checkout {
     }
 
     private Double getCheckoutDiscount(Double total) {
-        orderDiscountFactory=new OrderDiscountFactory();
+        orderDiscountFactory=OrderDiscountFactory.getInstance();
         Double totalAfterCheckoutDiscount=orderDiscountFactory.getTotal(total);
         return totalAfterCheckoutDiscount;
     }
