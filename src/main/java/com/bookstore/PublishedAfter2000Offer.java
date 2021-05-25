@@ -1,10 +1,10 @@
 package com.bookstore;
 
-public class ItemOnOffer extends ItemDecorator {
+public class PublishedAfter2000Offer extends ItemDecorator {
 
     public static final int DISCOUNT_POST_2000 = 10;
 
-    public ItemOnOffer(Item item) {
+    public PublishedAfter2000Offer(Item item) {
         this.item=item;
     }
 
