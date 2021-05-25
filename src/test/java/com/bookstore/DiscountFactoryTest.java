@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Discount30Test {
+public class DiscountFactoryTest {
 
     @Test
-    void test5PercentDiscountIfBookIsPublishedAfter2000() {
+    void test10PercentDiscountIfBookIsPublishedAfter2000() {
         //setup
         Discount30 order = new Discount30();
         //act and assert

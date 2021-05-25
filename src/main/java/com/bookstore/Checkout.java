@@ -25,8 +25,10 @@ public class Checkout {
 
     Double calculatePaymentAmountAfterDiscount() {
         Double total = 0.0;
+        discountFactory=DiscountFactory.getInstance();
         for (Item item : items) {
-            total = total + DiscountFactory.getInstance().getDiscountedItemPrice(item);
+            Discount discount=discountFactory.createDiscount(item);
+            total = total + discount.getDiscountedValue(item.getPrice());
         }
         Double totalAfterCheckoutDiscount = getCheckoutDiscount(total);
         return getFormattedTotal(totalAfterCheckoutDiscount);
@@ -34,7 +36,8 @@ public class Checkout {
 
     private Double getCheckoutDiscount(Double total) {
         discountFactory = DiscountFactory.getInstance();
-        Double totalAfterCheckoutDiscount = discountFactory.getTotal(total);
+        Discount discount= discountFactory.createDiscount(total);
+        Double totalAfterCheckoutDiscount = discount.getDiscountedValue(total);
         return totalAfterCheckoutDiscount;
     }
 

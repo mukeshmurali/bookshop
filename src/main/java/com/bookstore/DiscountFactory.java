@@ -14,18 +14,21 @@ public class DiscountFactory {
         return discountFactory;
     }
 
-    Double getTotal(Double total) {
-        if (total > 30) {
-            total = new Discount30().getDiscountedValue(total);
-        }
-        return total;
+    Discount createDiscount(Double total){
+        Discount discount = null;
+        if (total > 30)
+            discount=new Discount30();
+        else
+            discount=new Discount0();
+        return discount;
     }
 
-    Double getDiscountedItemPrice(Item item) {
-        Double total = item.getPrice();
-        if (item.getYear() > DISCOUNT_PUBLISHEDYEAR) {
-            total = new DiscountPublishedAfter2000().getDiscountedValue(item.getPrice());
-        }
-        return total;
+    Discount createDiscount(Item item){
+        Discount discount = null;
+        if (item.getYear() > DISCOUNT_PUBLISHEDYEAR)
+            discount=new DiscountPublishedAfter2000();
+        else
+            discount=new Discount0();
+        return discount;
     }
 }
