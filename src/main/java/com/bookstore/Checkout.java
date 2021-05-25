@@ -7,7 +7,7 @@ import java.util.List;
 public class Checkout {
     private static Checkout checkout;
     private List<Item> items;
-    private OrderDiscountFactory orderDiscountFactory;
+    private DiscountFactory discountFactory;
 
     private Checkout() {
     }
@@ -26,15 +26,15 @@ public class Checkout {
     Double calculatePaymentAmountAfterDiscount() {
         Double total = 0.0;
         for (Item item : items) {
-            total = total + OrderDiscountFactory.getInstance().getDiscountedItemPrice(item);
+            total = total + DiscountFactory.getInstance().getDiscountedItemPrice(item);
         }
         Double totalAfterCheckoutDiscount = getCheckoutDiscount(total);
         return getFormattedTotal(totalAfterCheckoutDiscount);
     }
 
     private Double getCheckoutDiscount(Double total) {
-        orderDiscountFactory = OrderDiscountFactory.getInstance();
-        Double totalAfterCheckoutDiscount = orderDiscountFactory.getTotal(total);
+        discountFactory = DiscountFactory.getInstance();
+        Double totalAfterCheckoutDiscount = discountFactory.getTotal(total);
         return totalAfterCheckoutDiscount;
     }
 

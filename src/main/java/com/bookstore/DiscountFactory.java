@@ -1,17 +1,17 @@
 package com.bookstore;
 
-public class OrderDiscountFactory {
+public class DiscountFactory {
     public static final int DISCOUNT_PUBLISHEDYEAR = 2000;
-    private static OrderDiscountFactory orderDiscountFactory;
+    private static DiscountFactory discountFactory;
 
-    private OrderDiscountFactory() {
+    private DiscountFactory() {
     }
 
-    public static OrderDiscountFactory getInstance() {
-        if (orderDiscountFactory == null) {
-            orderDiscountFactory = new OrderDiscountFactory();
+    public static DiscountFactory getInstance() {
+        if (discountFactory == null) {
+            discountFactory = new DiscountFactory();
         }
-        return orderDiscountFactory;
+        return discountFactory;
     }
 
     Double getTotal(Double total) {
