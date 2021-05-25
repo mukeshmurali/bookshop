@@ -32,6 +32,10 @@ public class Checkout {
         }
         if(total > 30)
             total= total - (total *5/100);
+        return getFormattedTotal(total);
+    }
+
+    private Double getFormattedTotal(Double total) {
         DecimalFormat df2= new DecimalFormat("#.##");
         df2.setRoundingMode(RoundingMode.FLOOR);
         return Double.parseDouble(df2.format(total));
