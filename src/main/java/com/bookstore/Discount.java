@@ -1,5 +1,5 @@
 package com.bookstore;
 
-public interface CheckoutDiscount {
+public interface Discount {
     Double getDiscountedValue(Double price);
 }

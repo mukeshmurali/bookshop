@@ -1,6 +1,6 @@
 package com.bookstore;
 
-public class CheckoutDiscount30 implements CheckoutDiscount {
+public class Discount30 implements Discount {
 
     private static final int TOTALAMOUNT_DISCOUNT_PERCENTAGE = 5;
 

@@ -16,7 +16,7 @@ public class OrderDiscountFactory {
 
     public Double getTotal(Double total) {
         if (total > 30) {
-            total = new CheckoutDiscount30().getDiscountedValue(total);
+            total = new Discount30().getDiscountedValue(total);
         }
         return total;
     }

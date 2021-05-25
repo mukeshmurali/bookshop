@@ -10,7 +10,6 @@
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //
 //
-//@Test(enabled=false)
 //@ExtendWith(MockitoExtension.class)
 //public class PublishedAfter2000OfferTest {
 //
